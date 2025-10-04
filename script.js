@@ -459,11 +459,32 @@
             }
 
             singingCats.forEach(cat => {
-                gsap.to(cat, {
-                    x: 0,
-                    duration: 0.3,
-                    ease: "power2.out"
-                });
+                // Check if this is a top/bottom cat (has h-left or h-right class but not --left or --right)
+                const isHorizontalCat = cat.classList.contains('singing-cat--h-left-far') ||
+                    cat.classList.contains('singing-cat--h-left-near') ||
+                    cat.classList.contains('singing-cat--h-right-near') ||
+                    cat.classList.contains('singing-cat--h-right-far');
+
+                const isMirrored = cat.classList.contains('singing-cat--mirrored');
+                const isTop = cat.classList.contains('singing-cat--top');
+
+                if (isHorizontalCat) {
+                    // Top/bottom cats slide vertically, preserve scaleX for mirrored cats and scaleY for top cats
+                    gsap.to(cat, {
+                        y: 0,
+                        scaleX: isMirrored ? -1 : 1,
+                        scaleY: isTop ? -1 : 1,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                } else {
+                    // Left/right cats slide horizontally
+                    gsap.to(cat, {
+                        x: 0,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+                }
             });
         }
 
@@ -474,19 +495,42 @@
 
             singingCats.forEach(cat => {
                 const isLeft = cat.classList.contains('singing-cat--left');
+                const isRight = cat.classList.contains('singing-cat--right');
+                const isTop = cat.classList.contains('singing-cat--top');
+                const isBottom = cat.classList.contains('singing-cat--bottom');
+                const isMirrored = cat.classList.contains('singing-cat--mirrored');
 
-                gsap.to(cat, {
-                    x: isLeft ? -84 : 84,
-                    duration: 0.25,
-                    ease: "power2.in",
-                    onComplete: () => {
-                        cat.classList.remove('is-singing');
-                    }
-                });
+                // Check if this is a horizontal cat (top/bottom row)
+                const isHorizontalCat = cat.classList.contains('singing-cat--h-left-far') ||
+                    cat.classList.contains('singing-cat--h-left-near') ||
+                    cat.classList.contains('singing-cat--h-right-near') ||
+                    cat.classList.contains('singing-cat--h-right-far');
+
+                if (isHorizontalCat) {
+                    // Top/bottom cats slide out vertically, preserve scaleX for mirrored cats and scaleY for top cats
+                    gsap.to(cat, {
+                        y: isTop ? -100 : 100,
+                        scaleX: isMirrored ? -1 : 1,
+                        scaleY: isTop ? -1 : 1,
+                        duration: 0.25,
+                        ease: "power2.in",
+                        onComplete: () => {
+                            cat.classList.remove('is-singing');
+                        }
+                    });
+                } else {
+                    // Left/right cats slide out horizontally
+                    gsap.to(cat, {
+                        x: isLeft ? -84 : 84,
+                        duration: 0.25,
+                        ease: "power2.in",
+                        onComplete: () => {
+                            cat.classList.remove('is-singing');
+                        }
+                    });
+                }
             });
-        }
-
-        function triggerCatsSing() {
+        } function triggerCatsSing() {
             singingCats.forEach(cat => {
                 // First remove is-singing to show closed mouth (frame 1)
                 cat.classList.remove('is-singing');

@@ -1012,20 +1012,62 @@ noscript {
     transform: translateX(84px) scaleX(-1);
 }
 
-.singing-cat--top {
+/* Vertical positioning for left/right side cats */
+.singing-cat--left.singing-cat--top,
+.singing-cat--right.singing-cat--top {
     top: 10%;
 }
 
-.singing-cat--top-mid {
+.singing-cat--left.singing-cat--top-mid,
+.singing-cat--right.singing-cat--top-mid {
     top: 35%;
 }
 
-.singing-cat--bottom-mid {
+.singing-cat--left.singing-cat--bottom-mid,
+.singing-cat--right.singing-cat--bottom-mid {
     bottom: 35%;
 }
 
-.singing-cat--bottom {
+.singing-cat--left.singing-cat--bottom,
+.singing-cat--right.singing-cat--bottom {
     bottom: 10%;
+}
+
+/* Top/bottom horizontal cats */
+.singing-cat--top:not(.singing-cat--left):not(.singing-cat--right) {
+    top: 0;
+    transform: translateY(-100px) scaleY(-1);
+}
+
+.singing-cat--bottom:not(.singing-cat--left):not(.singing-cat--right) {
+    bottom: 0;
+    transform: translateY(100px);
+}
+
+/* Horizontal positioning for top/bottom row cats */
+.singing-cat--h-left-far {
+    left: 15%;
+}
+
+.singing-cat--h-left-near {
+    left: 35%;
+}
+
+.singing-cat--h-right-near {
+    right: 35%;
+}
+
+.singing-cat--h-right-far {
+    right: 15%;
+}
+
+/* Mirror cats on the right side of the screen */
+.singing-cat--top.singing-cat--mirrored {
+    transform: translateY(-100px) scaleX(-1) scaleY(-1);
+}
+
+.singing-cat--bottom.singing-cat--mirrored {
+    transform: translateY(100px) scaleX(-1);
 }
 
 .singing-cat__frame {
