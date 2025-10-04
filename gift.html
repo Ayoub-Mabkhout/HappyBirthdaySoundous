@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#D35400" />
+    <title>Happy Birthday Soundous! 🎉</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page-gift" data-page="gift">
+    <main>
+        <div class="marquee-banner" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Soundous, you deserve ALL the treats! 🍰💳✨</span>
+                <span>Spend it loud, spend it proud! 🎁💃</span>
+                <span>Soundous, you deserve ALL the treats! 🍰💳✨</span>
+                <span>Spend it loud, spend it proud! 🎁💃</span>
+            </div>
+        </div>
+        <div id="sparkle-overlay" class="sparkle-overlay" aria-hidden="true"></div>
+        <header>
+            <h1>Happy Birthday, Soundous! 🍂🎈</h1>
+            <p class="hero-intro">
+                Your goofy-autumn crew pooled all their love (and a suspicious amount of
+                glitter) to bring you this little surprise. Tap the present to reveal the
+                big ta-da!
+            </p>
+        </header>
+
+        <section aria-label="Birthday gift reveal">
+            <div class="reveal-stage" id="reveal-stage">
+                <div class="starburst" id="starburst-gift" aria-hidden="true"></div>
+                <button id="present-trigger" class="present-button" type="button">
+                    <span class="sr-only">Open the birthday present</span>
+                    <img id="present-image" src="images/gift.png" alt="A wrapped autumn gift box" loading="lazy" />
+                </button>
+
+                <div class="gift-card-frame" id="gift-card-frame">
+                    <img id="gift-card" src="images/gift-card.png" alt="Surprise gift card" loading="lazy" />
+                </div>
+            </div>
+        </section>
+
+        <!-- Replay button -->
+        <div style="text-align: center; margin-top: 1rem;">
+            <button class="replay-button" id="replay-button" type="button" title="Replay not available" disabled>
+                Play Again
+            </button>
+        </div>
+
+        <p class="site-footnote">
+            Psst... keep this tab handy in case you need to show off your awesome new
+            goodies.
+        </p>
+
+        <audio id="horn-audio" src="audio/party-horn.mp3" preload="auto"></audio>
+
+        <noscript>
+            The gift reveal animation needs JavaScript. Enable it and refresh for the
+            full surprise!
+        </noscript>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>

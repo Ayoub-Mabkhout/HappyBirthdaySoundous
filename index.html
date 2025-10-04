@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#D35400" />
+    <title>Claim Your Birthday Gift 🎁</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="page-landing" data-page="landing">
+    <main>
+        <div class="marquee-banner" aria-hidden="true">
+            <div class="marquee-track">
+                <span>Happy Birthday Soundous! 🎉🍂✨</span>
+                <span>Let the confetti fly and the giggles roll! 🎈💥</span>
+                <span>Happy Birthday Soundous! 🎉🍂✨</span>
+                <span>Let the confetti fly and the giggles roll! 🎈💥</span>
+            </div>
+        </div>
+        <div class="rave-overlay" aria-hidden="true">
+            <span class="rave-overlay__pulse"></span>
+            <span class="rave-overlay__pulse rave-overlay__pulse--alt"></span>
+            <span class="rave-overlay__beam"></span>
+            <span class="rave-overlay__beam rave-overlay__beam--alt"></span>
+        </div>
+        <div id="sparkle-overlay" class="sparkle-overlay" aria-hidden="true"></div>
+        <header>
+            <h1>Enter the password to claim your gift 🎁</h1>
+            <p class="landing-subtitle">
+                A cozy-autumn surprise is waiting on the other side. Whisper the secret
+                code, press the shiny button, and let the celebration begin.
+            </p>
+        </header>
+
+        <div class="experience-stage" id="experience-stage">
+            <div class="starburst" id="starburst" aria-hidden="true"></div>
+            <form id="claim-form" class="claim-form" novalidate>
+                <label class="sr-only" for="password-input">Birthday password</label>
+                <input id="password-input" type="password" name="password" inputmode="text" autocomplete="off"
+                    placeholder="Psst... what's the secret word?" required aria-describedby="form-feedback" />
+                <fieldset class="mode-selector" aria-describedby="mode-feedback">
+                    <legend>Pick your party mode</legend>
+                    <label class="mode-option">
+                        <input type="radio" name="party-mode" value="mode1" />
+                        <span class="mode-option__label">
+                            Turbo rave lights
+                        </span>
+                    </label>
+                    <label class="mode-option">
+                        <input type="radio" name="party-mode" value="mode2" />
+                        <span class="mode-option__label">
+                            Goofy squad (cats)
+                        </span>
+                    </label>
+                    <p id="mode-feedback" class="mode-feedback" role="alert"></p>
+                </fieldset>
+                <button id="claim-button" class="button-primary" type="submit" disabled>
+                    Claim Your Gift
+                </button>
+                <p id="form-feedback" class="form-feedback" role="status" aria-live="polite"></p>
+                <p id="progress-status" class="progress-hint" aria-live="polite"></p>
+            </form>
+
+            <section class="faces-stage" aria-hidden="true">
+                <div class="faces-orbit">
+                    <picture class="face"><img src="images/faces/face1.png" alt="" /></picture>
+                    <picture class="face"><img src="images/faces/face2.png" alt="" /></picture>
+                    <picture class="face"><img src="images/faces/face3.png" alt="" /></picture>
+                    <picture class="face"><img src="images/faces/face4.png" alt="" /></picture>
+                    <picture class="face"><img src="images/faces/face5.png" alt="" /></picture>
+                    <picture class="face"><img src="images/faces/face6.png" alt="" /></picture>
+                    <picture class="face"><img src="images/faces/face7.png" alt="" /></picture>
+                    <picture class="face"><img src="images/faces/face8.png" alt="" /></picture>
+                </div>
+            </section>
+        </div>
+
+        <p class="site-footnote">
+            Tip: If your browser is shy about auto-playing the music, we'll ask for a
+            quick tap to kick things off.
+        </p>
+
+        <div class="singing-cats" aria-hidden="true">
+            <div class="singing-cat singing-cat--left singing-cat--top">
+                <img class="singing-cat__frame singing-cat__frame--1" src="images/singingcat_1.png" alt="" />
+                <img class="singing-cat__frame singing-cat__frame--2" src="images/singingcat_2.png" alt="" />
+            </div>
+            <div class="singing-cat singing-cat--left singing-cat--top-mid">
+                <img class="singing-cat__frame singing-cat__frame--1" src="images/singingcat_1.png" alt="" />
+                <img class="singing-cat__frame singing-cat__frame--2" src="images/singingcat_2.png" alt="" />
+            </div>
+            <div class="singing-cat singing-cat--left singing-cat--bottom-mid">
+                <img class="singing-cat__frame singing-cat__frame--1" src="images/singingcat_1.png" alt="" />
+                <img class="singing-cat__frame singing-cat__frame--2" src="images/singingcat_2.png" alt="" />
+            </div>
+            <div class="singing-cat singing-cat--left singing-cat--bottom">
+                <img class="singing-cat__frame singing-cat__frame--1" src="images/singingcat_1.png" alt="" />
+                <img class="singing-cat__frame singing-cat__frame--2" src="images/singingcat_2.png" alt="" />
+            </div>
+            <div class="singing-cat singing-cat--right singing-cat--top">
+                <img class="singing-cat__frame singing-cat__frame--1" src="images/singingcat_1.png" alt="" />
+                <img class="singing-cat__frame singing-cat__frame--2" src="images/singingcat_2.png" alt="" />
+            </div>
+            <div class="singing-cat singing-cat--right singing-cat--top-mid">
+                <img class="singing-cat__frame singing-cat__frame--1" src="images/singingcat_1.png" alt="" />
+                <img class="singing-cat__frame singing-cat__frame--2" src="images/singingcat_2.png" alt="" />
+            </div>
+            <div class="singing-cat singing-cat--right singing-cat--bottom-mid">
+                <img class="singing-cat__frame singing-cat__frame--1" src="images/singingcat_1.png" alt="" />
+                <img class="singing-cat__frame singing-cat__frame--2" src="images/singingcat_2.png" alt="" />
+            </div>
+            <div class="singing-cat singing-cat--right singing-cat--bottom">
+                <img class="singing-cat__frame singing-cat__frame--1" src="images/singingcat_1.png" alt="" />
+                <img class="singing-cat__frame singing-cat__frame--2" src="images/singingcat_2.png" alt="" />
+            </div>
+        </div>
+
+        <audio id="birthday-audio" src="audio/birthday_song_2.mp3" preload="auto"></audio>
+        <audio id="clap-audio" src="audio/clap-track-placeholder.mp3" preload="auto"></audio>
+
+        <noscript>
+            This birthday surprise needs JavaScript for the party lights, music, and
+            confetti. Please enable it and refresh the page.
+        </noscript>
+    </main>
+
+    <div class="audio-permission is-hidden" id="audio-permission" role="dialog" aria-modal="true">
+        <div class="audio-permission__panel">
+            <p>
+                Your browser wants a thumbs-up before we blast the birthday song. Tap
+                the button below to start the celebration!
+            </p>
+            <button id="audio-play-button" class="button-primary" type="button">
+                Start the party
+            </button>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
