@@ -426,7 +426,7 @@ h3 {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: clamp(70px, 10vw, 110px);
+    width: clamp(70px, 10vw, 85px);
     aspect-ratio: 1 / 1;
     display: flex;
     align-items: center;
